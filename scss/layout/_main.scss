@@ -1,0 +1,480 @@
+/** Layout css Starts here **/
+
+.title {
+    font-size: 60px;
+    text-transform: uppercase;
+    color: $white;
+    font-family: $main-font;
+    @include breakpoint(large) {
+        font-size: 40px;
+    }
+}
+
+.home_banner {
+    @include bg-cover;
+    height: 100%;
+    width: 100%;
+    & .container {
+        height: 100%;
+        align-items: center;
+        display: flex;
+    }
+    & .caption-text {
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 650px;
+        & h1 {
+            font-size: 73px;
+            color: $primary-color;
+            font-family: $main-font-heavy;
+            text-transform: uppercase;
+            @include breakpoint(large) {
+                font-size: 52px;
+            }
+        }
+        & h2 {
+            font-size: 55px;
+            color: $white;
+            font-family: $main-font-book;
+            text-transform: uppercase;
+            margin: 12px 0 15px;
+            @include breakpoint(large) {
+                font-size: 38px;
+            }
+        }
+        & h3 {
+            text-transform: uppercase;
+            font-size: 40px;
+            color: $white;
+            font-family: $main-font-light;
+            @include breakpoint(large) {
+                font-size: 32px;
+            }
+        }
+        & a {
+            font-size: 20px;
+            color: $primary-color;
+            @include add-border(1px, #ffff39, all);
+            padding: 15px 30px;
+            display: inline-block;
+            border-radius: 10px;
+            margin: 40px 0 0;
+            text-transform: uppercase;
+            &:hover {
+                background: $primary-color;
+                color: $black;
+            }
+        }
+    }
+    & .play_btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        left: 0;
+        right: 0;
+        text-align: center;
+        width: 77px;
+        margin: auto;
+    }
+}
+
+.about-us {
+    background: $dark-grey;
+    padding: 70px 0;
+    & .container {
+        position: relative;
+    }
+    & .about_info {
+        position: absolute;
+        background: $dark-grey;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        max-width: 515px;
+        & p {
+            font-size: 20px;
+            color: $white;
+            font-family: $main-font-light;
+            line-height: 1.5;
+            @include breakpoint(large){
+                    font-size: 15px;
+                }
+        }
+    }
+    & .outer-border {
+        @include add-border(10px, $primary-color, all);
+        width: 440px;
+        height: 515px;
+        margin-left: 120px;
+    }
+    & .abt_img {
+        position: absolute;
+        bottom: -51px;
+        left: 0;
+        width: 735px;
+        @include breakpoint(large) {
+            width: 678px;
+            bottom: -44px;
+        }
+    }
+    & .about_points {
+        padding: 0 50px;
+        & ul {
+
+            & li {
+                font-size: 20px;
+                color: $white;
+                font-family: $main-font-book;
+                text-transform: uppercase;
+                position: relative;
+                margin: 0 0 30px;
+                @include breakpoint(large) {
+                    font-size: 14px;
+                }
+                &:before {
+                    content: "\f00c";
+                    width: 40px;
+                    height: 40px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    transform: skewX(-15deg);
+                    -webkit-transform: skewX(-15deg);
+                    margin: 0 25px 0 0;
+                    background: $primary-color;
+                    font-family: $FontAwesome;
+                    color: $black;
+                    text-align: center;
+                    line-height: 40px;
+                }
+            }
+        }
+    }
+}
+
+.our_services {
+    background-size: cover !important;
+    height: 860px;
+    padding: 85px 0;
+    position: relative;
+    &:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.93);
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+    & .container {
+        position: relative;
+        z-index: 2;
+    }
+    & h2 {
+        text-align: center;
+        margin: 0 0 20px;
+    }
+    & .srvc-box {
+        background: $alt-grey;
+        display: flex;
+        margin: 30px 0 0;
+
+        & figure {
+            background: #ffff39;
+            height: 170px;
+            flex-wrap: wrap;
+            text-align: center;
+            margin: 0;
+            width: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        & figcaption {
+            display: flex;
+            width: 75%;
+            flex-wrap: wrap;
+            padding: 15px 10px 15px 20px;
+            & h3 {
+                color: $white;
+                font-size: 24px;
+                font-family: $main-font;
+                text-transform: uppercase;
+                margin: 0 0 6px;
+            }
+            & p {
+                color: $white;
+                font-size: 20px;
+                font-family: $main-font-light;
+            }
+        }
+    }
+}
+
+.our-blog {
+    background: $dark-grey;
+    padding: 85px 0;
+    text-align: center;
+    & h2 {
+        margin: 0 0 60px;
+    }
+    & .blog_box {
+        & figure {
+            height: 292px;
+            background-size: cover !important;
+            margin: 0;
+        }
+        & .post-content {
+            background: $blog_post_bg;
+            position: relative;
+            padding: 55px 20px 20px;
+            & .date {
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                top: -40px;
+                width: 80px;
+                height: 80px;
+                background: $primary-color;
+                text-transform: uppercase;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: center;
+                & span {
+                    font-size: 38px;
+                    font-family: $main-font;
+                    color: $alt-grey;
+                    line-height: 1;
+                    display: block;
+                    & small {
+                        color: $alt-grey;
+                        font-size: 17px;
+                        font-family: $main-font-light;
+                        width: 100%;
+                        display: block;
+                    }
+                }
+            }
+            & h3 {
+                color: $white;
+                font-size: 24px;
+                text-transform: uppercase;
+                margin: 0 0 8px;
+                font-family: $main-font;
+            }
+            & p {
+                color: $white;
+                font-size: 20px;
+                font-family: $main-font-light;
+            }
+            & .rd_more_btn {
+                width: 200px;
+                height: 68px;
+                line-height: 68px;
+                @include add-border(1px, $primary-color, all);
+                font-size: 20px;
+                display: block;
+                font-family: $main-font;
+                color: $primary-color;
+                margin: 20px auto 0;
+                border-radius: 10px;
+                text-transform: uppercase;
+                &:hover,
+                &:focus {
+                    background: $primary-color;
+                    color: #000;
+                }
+            }
+        }
+    }
+}
+
+.shedule-appointment {
+    padding: 90px 0;
+    background-size: cover !important;
+    text-align: center;
+    position: relative;
+    background-attachment: fixed !important;
+    &:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+    & .container {
+        position: relative;
+        z-index: 2;
+    }
+    & h5 {
+        color: $white;
+        font-size: 20px;
+        font-family: $main-font-book;
+        margin: 15px 0 40px;
+    }
+    & form {
+
+        & .form-control {
+            background: none;
+            @include add-border(1px, $input_border, all);
+            height: 55px !important;
+            padding: 0 15px;
+            color: #fff;
+            &.txtarea {
+                height: 135px !important;
+                padding: 15px;
+            }
+            @include placeholder {
+                color: $white;
+            }
+            border-radius: 0;
+        }
+        & .sbmt_btn {
+            width: 200px;
+            height: 68px;
+            line-height: 68px;
+            @include add-border(1px, $primary-color, all);
+            font-size: 20px;
+            display: block;
+            font-family: $main-font;
+            color: $primary-color;
+            margin: 20px auto 0;
+            border-radius: 10px;
+            text-transform: uppercase;
+            background: none;
+            cursor: pointer;
+            &:hover,
+            &:focus {
+                background: $primary-color;
+                color: #000;
+            }
+        }
+    }
+}
+
+footer {
+    background: $dark-grey;
+    padding: 62px 0 0;
+    & h2 {
+        font-size: 20px;
+        text-transform: uppercase;
+        color: $white;
+        margin: 0 0 24px;
+        font-family: $main-font;
+    }
+    & .block1 {
+        & ul {
+
+            & li {
+                font-family: $main-font-light;
+                font-size: 18px;
+                margin: 0 0 10px;
+                width: 50%;
+                float: left;
+                text-transform: capitalize;
+                padding-left: 25px;
+                position: relative;
+                &:before {
+                    position: absolute;
+                    content: "\f105";
+                    font-family: $FontAwesome;
+                    color: $primary-color;
+                    left: 0;
+                    top: -1px;
+                }
+                & a {
+                    color: $white;
+                    &:hover,
+                    &:focus {
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+    & .block2 {
+        width: 80%;
+        & ul {
+
+            & li {
+                width: 100%;
+                float: right;
+                margin: 0 0 20px;
+                font-size: 18px;
+                font-family: $main-font-light;
+                & a {
+                    color: $white;
+                    &:hover,
+                    &:focus {
+                        color: $primary-color;
+                    }
+                }
+                & span {
+                    color: $primary-color;
+                    width: 5%;
+                    float: left;
+                    text-align: center;
+                    font-size: 20px;
+                    position: relative;
+                    top: -4px;
+                }
+                & p {
+                    color: $white;
+                    float: left;
+                    width: 95%;
+                    padding-left: 15px;
+                }
+            }
+        }
+
+    }
+    & .block3 {
+        text-align: center;
+        & .follow_div {
+            margin: 30px 0 0;
+            & p {
+                font-size: 18px;
+                text-transform: uppercase;
+                color: $white;
+                font-family: $main-font;
+                margin: 0 0 20px;
+                letter-spacing: 0.5px;
+            }
+            & ul {
+                & li {
+                    display: inline-block;
+                    margin: 0 15px;
+                    font-size: 24px;
+                    & a {
+                        color: #606060;
+                        cursor: pointer;
+                        &:hover,
+                        &:focus {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & .copyright {
+        padding: 15px 0;
+        background: #121212;
+        text-align: center;
+        margin: 30px 0 0;
+        & p {
+            color: $white;
+            font-family: $main-font-light;
+            font-size: 17px;
+        }
+    }
+}

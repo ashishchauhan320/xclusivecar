@@ -1,0 +1,102 @@
+/************* Header *************/
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99999;
+    & .cvr_header {
+        display: flex;
+    }
+    & .logo {
+        float: left;
+        width: 30%;
+        margin: 20px 0 0;
+    }
+    & .right-header {
+        float: left;
+        width: 70%;
+        & .connect_div {
+            width: 100%;
+            text-align: right;
+            @include add-border(1px, #413a1d, bottom);
+            margin: 0 0 23px;
+            & .cntct {
+                display: inline-block;
+                vertical-align: middle;
+                color: $white;
+                font-family: $main-font-light;
+                padding: 20px 30px;
+                @include add-border(1px, #413a1d, right);
+                & i {
+                    color: $primary-color;
+                    font-size: 27px;
+                    display: inline-block;
+                    vertical-align: top;
+                    position: relative;
+                    top: -2px;
+                    left: -3px;
+                }
+                & a {
+                    color: $white;
+                    font-family: $main-font;
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+            & ul {
+                display: inline-block;
+                vertical-align: middle;
+                padding: 20px 0;
+                overflow: hidden;
+                & li {
+                    float: left;
+                    margin: 0 14px 0;
+                    font-family: $main-font;
+                    font-size: 20px;
+                    & a {
+                        color: $offWhite;
+                        &:hover {
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    & nav {
+        &.custom-nav {
+            & .navbar-collapse {
+                justify-content: flex-end;
+            }
+            & li {
+                margin: 0 0 0 50px;
+                font-size: 20px;
+                text-transform: uppercase;
+                @include breakpoint(large) {
+                    margin: 0 0 0 40px;
+                    font-size: 16px;
+                }
+                &.active {
+                    & a {
+                        color: $primary-color !important;
+                    }
+                }
+                & a {
+                    color: $white !important;
+                    padding: 0 !important;
+                    margin: 0 !important;
+                    &:hover,
+                    &:focus {
+                        color: $primary-color !important;
+                    }
+                }
+            }
+        }
+    }
+    &.sticky {
+        background: rgba(0, 0, 0, 0.9);
+        @include add-border(2px, #ffff39, bottom);
+    }
+}
