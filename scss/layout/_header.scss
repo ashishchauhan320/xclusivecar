@@ -5,13 +5,31 @@ header {
     width: 100%;
     top: 0;
     z-index: 99999;
+    overflow-x: hidden;
     & .cvr_header {
-        display: flex;
+        display: block;
     }
     & .logo {
         float: left;
         width: 30%;
         margin: 20px 0 0;
+        @include breakpoint(ipad) {
+            width: 25%;
+            margin: 20px 5% 0 0px;
+        }
+        @include breakpoint(mobile) {
+            width: 100%;
+            margin: 5px 0 10px;
+            display: block;
+            float: none;
+        }
+        & a {
+            @include breakpoint(mobile) {
+                width: 150px;
+                margin: auto;
+                display: block;
+            }
+        }
     }
     & .right-header {
         float: left;
@@ -21,6 +39,11 @@ header {
             text-align: right;
             @include add-border(1px, #413a1d, bottom);
             margin: 0 0 23px;
+            position: relative;
+            @include breakpoint(mobile) {
+                text-align: center;
+                @include add-border(1px, #413a1d, top);
+            }
             & .cntct {
                 display: inline-block;
                 vertical-align: middle;
@@ -36,13 +59,17 @@ header {
                     position: relative;
                     top: -2px;
                     left: -3px;
-                }
+                } 
                 & a {
                     color: $white;
                     font-family: $main-font;
                     &:hover {
                         color: $primary-color;
                     }
+                }
+                @include breakpoint(mobile) {
+                    border: 0 none;
+                    padding: 8px 5px 6px;
                 }
             }
             & ul {
@@ -62,7 +89,28 @@ header {
                         }
                     }
                 }
+                @include breakpoint(mobile) {
+                    display: none;
+                }
             }
+            &:after {
+                content: "";
+                position: absolute;
+                background: #413a1d;
+                height: 1px;
+                width: 1000px;
+                right: -1000px;
+                bottom: -1px;
+                @include breakpoint(mobile) {
+                    display: none;
+                }
+            }
+        }
+        @include breakpoint(mobile) {
+            width: 100%;
+            margin: 0 0 10px;
+            display: block;
+            float: none;
         }
     }
     & nav {
@@ -75,10 +123,15 @@ header {
                 font-size: 20px;
                 text-transform: uppercase;
                 @include breakpoint(large) {
-                    margin: 0 0 0 40px;
+                    margin: 0 0 0 38px;
                     font-size: 16px;
                 }
-                &.active {
+                @include breakpoint(normal) {
+                    margin: 0 0 0 26px;
+                    font-size: 15px;
+                }
+                &.active,
+                &.current-menu-item {
                     & a {
                         color: $primary-color !important;
                     }
@@ -94,9 +147,22 @@ header {
                 }
             }
         }
+        @include breakpoint(ipad) {
+            display: none !important;
+        }
     }
     &.sticky {
         background: rgba(0, 0, 0, 0.9);
         @include add-border(2px, #ffff39, bottom);
+        @include breakpoint(mobile) {
+            position: static;
+            display: none;
+            border: 0;
+            animation: none;
+            -webkit-animation: none;
+        }
+    }
+    @include breakpoint(ipad) {
+        margin-top: 42px;
     }
 }

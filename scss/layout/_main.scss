@@ -1,5 +1,78 @@
 /** Layout css Starts here **/
 
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    background: url(../images/select.png) no-repeat scroll right center !important;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.customize-support header {
+    margin-top: 32px;
+}
+
+.srch-page .page-header {
+    position: static !important;
+    animation: none;
+    -webkit-animation: none;
+    background: none;
+    border-top: 0;
+    padding-top: 0;
+    margin: 0 0 30px !important;
+    border-bottom: 2px solid #ffff39;
+    display: block !important;
+    @include breakpoint(mobile) {
+        margin: 0 0 15px !important;
+    }
+}
+
+.srch-page .page-content {
+    margin: 0;
+}
+
+.srch-page h1.page-title {
+    color: #fff;
+    padding: 0 0 15px;
+}
+
+section.no-results.not-found p {
+    color: #fff;
+    @include breakpoint(mobile) {
+        font-size: 14px;
+    }
+}
+
+.srch-page form.search-form {
+    display: none;
+}
+
+.social-share {
+    display: none;
+    margin-left: 0px;
+}
+
+.share_list {
+    position: relative;
+}
+
+.share_list:hover .social-share {
+    display: block;
+}
+
+.social-share li {
+    padding-left: 15px !important;
+    margin-left: 15px !important;
+}
+
+.social-share li:first-child {
+    margin-left: 0 !important;
+}
+
 .title {
     font-size: 60px;
     text-transform: uppercase;
@@ -8,64 +81,153 @@
     @include breakpoint(large) {
         font-size: 40px;
     }
+    @include breakpoint(ipad) {
+        font-size: 32px;
+    }
+    @include breakpoint(mobile) {
+        font-size: 22px;
+    }
 }
 
-.home_banner {
-    @include bg-cover;
-    height: 100%;
+.cstm-btn {
     width: 100%;
+    position: relative;
+
+    & .ajax-loader {
+        position: absolute;
+        top: 28px;
+        left: 120px;
+        right: 0;
+        margin: 0 auto !important;
+        background-color: #ffff39;
+        border-radius: 50%;
+        @include breakpoint(normal) {
+            top: 22px;
+        }
+        @include breakpoint(mobile) {
+            top: 37px;
+        }
+    }
+
+
+}
+
+.inner_banner {
+    @include bg-cover;
+    height: 695px;
+    width: 100%;
+    background-position: top center !important;
+    @include breakpoint(normal) {
+        height: 430px;
+    }
+    @include breakpoint(mobile) {
+        height: 260px;
+    }
     & .container {
         height: 100%;
         align-items: center;
         display: flex;
     }
     & .caption-text {
-        flex-wrap: wrap;
-        width: 100%;
-        max-width: 650px;
-        & h1 {
-            font-size: 73px;
-            color: $primary-color;
-            font-family: $main-font-heavy;
-            text-transform: uppercase;
-            @include breakpoint(large) {
-                font-size: 52px;
-            }
-        }
-        & h2 {
-            font-size: 55px;
-            color: $white;
-            font-family: $main-font-book;
-            text-transform: uppercase;
-            margin: 12px 0 15px;
-            @include breakpoint(large) {
-                font-size: 38px;
-            }
-        }
-        & h3 {
-            text-transform: uppercase;
-            font-size: 40px;
-            color: $white;
-            font-family: $main-font-light;
-            @include breakpoint(large) {
-                font-size: 32px;
-            }
-        }
-        & a {
-            font-size: 20px;
-            color: $primary-color;
-            @include add-border(1px, #ffff39, all);
-            padding: 15px 30px;
-            display: inline-block;
-            border-radius: 10px;
-            margin: 40px 0 0;
-            text-transform: uppercase;
-            &:hover {
-                background: $primary-color;
-                color: $black;
-            }
+        @include breakpoint(normal) {
+            margin-top: 108px;
         }
     }
+}
+
+.caption-text {
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 650px;
+    margin: 140px 0 0;
+    @include breakpoint(ipad) {
+        margin: 94px 0 0;
+    }
+    @include breakpoint(mobile) {
+        margin: 40px 0 0;
+        text-align: center;
+    }
+    & h1 {
+        font-size: 73px;
+        color: $primary-color;
+        font-family: $main-font-heavy;
+        text-transform: uppercase;
+        @include breakpoint(large) {
+            font-size: 52px;
+        }
+        @include breakpoint(normal) {
+            font-size: 46px;
+        }
+        @include breakpoint(mobile) {
+            font-size: 24px;
+        }
+    }
+    & h2 {
+        font-size: 55px;
+        color: $white;
+        font-family: $main-font-book;
+        text-transform: uppercase;
+        margin: 12px 0 15px;
+        @include breakpoint(large) {
+            font-size: 38px;
+        }
+        @include breakpoint(normal) {
+            font-size: 30px;
+        }
+        @include breakpoint(mobile) {
+            font-size: 18px;
+        }
+    }
+    & h3 {
+        text-transform: uppercase;
+        font-size: 40px;
+        color: $white;
+        font-family: $main-font-light;
+        @include breakpoint(large) {
+            font-size: 32px;
+        }
+        @include breakpoint(normal) {
+            font-size: 26px;
+        }
+        @include breakpoint(mobile) {
+            font-size: 14px;
+        }
+    }
+    & a {
+        font-size: 20px;
+        color: $primary-color;
+        @include add-border(1px, #ffff39, all);
+        padding: 15px 30px;
+        display: inline-block;
+        border-radius: 10px;
+        margin: 40px 0 0;
+        text-transform: uppercase;
+        &:hover {
+            background: $primary-color;
+            color: $black;
+        }
+        @include breakpoint(normal) {
+            font-size: 18px;
+        }
+        @include breakpoint(mobile) {
+            font-size: 14px;
+            padding: 10px 15px;
+            margin: 15px 0 0;
+        }
+    }
+}
+
+.home_banner {
+    @include bg-cover;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    & .container {
+        height: 100%;
+        align-items: center;
+        display: flex;
+    }
+
     & .play_btn {
         position: absolute;
         top: 50%;
@@ -76,12 +238,36 @@
         text-align: center;
         width: 77px;
         margin: auto;
+        &:hover {
+            opacity: 0.7;
+        }
+        @include breakpoint(ipad) {
+            left: inherit;
+            right: 60px;
+        }
+        @include breakpoint(mobile) {
+            left: 0;
+            top: inherit;
+            transform: none;
+            bottom: 20px;
+            right: 0;
+            width: 40px;
+        }
+    }
+    @include breakpoint(normal) {
+        height: 500px;
+    }
+    @include breakpoint(mobile) {
+        height: 380px;
     }
 }
 
 .about-us {
     background: $dark-grey;
     padding: 70px 0;
+    @include breakpoint(mobile) {
+        padding: 40px 0;
+    }
     & .container {
         position: relative;
     }
@@ -92,14 +278,23 @@
         left: 0;
         width: 100%;
         max-width: 515px;
+        padding: 7px 0;
         & p {
             font-size: 20px;
             color: $white;
             font-family: $main-font-light;
             line-height: 1.5;
-            @include breakpoint(large){
-                    font-size: 15px;
-                }
+            @include breakpoint(large) {
+                font-size: 15px;
+            }
+            @include breakpoint(mobile) {
+                font-size: 14px;
+            }
+        }
+        @include breakpoint(mobile) {
+            left: 15px;
+            width: 85%;
+            padding: 15px 0;
         }
     }
     & .outer-border {
@@ -107,6 +302,17 @@
         width: 440px;
         height: 515px;
         margin-left: 120px;
+        @include breakpoint(normal) {
+            height: 455px;
+            margin-left: 80px;
+        }
+        @include breakpoint(ipad) {
+            width: 100%;
+            margin: 0;
+        }
+        @include breakpoint(mobile) {
+            height: 395px;
+        }
     }
     & .abt_img {
         position: absolute;
@@ -116,6 +322,20 @@
         @include breakpoint(large) {
             width: 678px;
             bottom: -44px;
+        }
+        @include breakpoint(normal) {
+            width: 575px;
+            bottom: 5px;
+            left: 0;
+        }
+        @include breakpoint(ipad) {
+            right: 0;
+            margin: auto;
+        }
+        @include breakpoint(mobile) {
+            width: 75%;
+            bottom: 10px;
+            left: 0;
         }
     }
     & .about_points {
@@ -132,6 +352,24 @@
                 @include breakpoint(large) {
                     font-size: 14px;
                 }
+                @include breakpoint(normal) {
+                    padding: 0 0 0 52px;
+                    margin: 0 0 40px;
+                }
+                @include breakpoint(ipad) {
+                    margin: 0 0 40px;
+                    width: 50%;
+                    float: left;
+                }
+                @include breakpoint(mobile) {
+                    width: 100%;
+                }
+                &:last-child {
+                    @include breakpoint(mobile) {
+                        margin: 0;
+                    }
+
+                }
                 &:before {
                     content: "\f00c";
                     width: 40px;
@@ -146,17 +384,35 @@
                     color: $black;
                     text-align: center;
                     line-height: 40px;
+                    @include breakpoint(normal) {
+                        width: 32px;
+                        height: 32px;
+                        line-height: 32px;
+                        top: -5px;
+                        position: absolute;
+                        left: 0;
+                    }
                 }
             }
+        }
+        @include breakpoint(ipad) {
+            padding: 0;
+            margin: 40px 0 0 0;
         }
     }
 }
 
 .our_services {
     background-size: cover !important;
-    height: 860px;
+    height: auto;
     padding: 85px 0;
     position: relative;
+    @include breakpoint(large) {
+        padding: 55px 0 75px;
+    }
+    @include breakpoint(mobile) {
+        padding: 30px 0 40px;
+    }
     &:after {
         position: absolute;
         content: "";
@@ -175,12 +431,15 @@
     & h2 {
         text-align: center;
         margin: 0 0 20px;
+        @include breakpoint(mobile) {
+            margin: 0;
+        }
     }
     & .srvc-box {
         background: $alt-grey;
         display: flex;
         margin: 30px 0 0;
-
+        flex-wrap: wrap;
         & figure {
             background: #ffff39;
             height: 170px;
@@ -191,23 +450,63 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            @include breakpoint(ipad) {
+                width: 100%;
+                height: 135px;
+            }
+            @include breakpoint(ipad) {
+                height: 90px;
+            }
+            @include breakpoint(mobile) {
+                height: 65px;
+            }
+            & img {
+                @include breakpoint(ipad) {
+                    width: 55px;
+                    height: 55px;
+                }
+                @include breakpoint(mobile) {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
         }
         & figcaption {
             display: flex;
             width: 75%;
             flex-wrap: wrap;
             padding: 15px 10px 15px 20px;
+            align-content: flex-start;
+            @include breakpoint(mobile) {
+                justify-content: center;
+            }
             & h3 {
                 color: $white;
                 font-size: 24px;
                 font-family: $main-font;
                 text-transform: uppercase;
                 margin: 0 0 6px;
+                @include breakpoint(large) {
+                    font-size: 20px;
+                }
             }
             & p {
                 color: $white;
                 font-size: 20px;
                 font-family: $main-font-light;
+                @include breakpoint(large) {
+                    font-size: 17px;
+                }
+                @include breakpoint(mobile) {
+                    font-size: 14px;
+                }
+            }
+            @include breakpoint(ipad) {
+                width: 100%;
+                height: 165px;
+            }
+            @include breakpoint(mobile) {
+                height: auto;
             }
         }
     }
@@ -217,14 +516,30 @@
     background: $dark-grey;
     padding: 85px 0;
     text-align: center;
+    @include breakpoint(large) {
+        padding: 55px 0 75px;
+    }
+    @include breakpoint(mobile) {
+        padding: 30px 0 20px;
+    }
     & h2 {
         margin: 0 0 60px;
+        @include breakpoint(mobile) {
+            margin: 0 0 25px;
+        }
     }
     & .blog_box {
+
+        @include breakpoint(ipad) {
+            margin: 0 0 30px;
+        }
         & figure {
             height: 292px;
             background-size: cover !important;
             margin: 0;
+            @include breakpoint(mobile) {
+                height: 175px;
+            }
         }
         & .post-content {
             background: $blog_post_bg;
@@ -257,6 +572,14 @@
                         width: 100%;
                         display: block;
                     }
+                    @include breakpoint(mobile) {
+                        font-size: 24px;
+                    }
+                }
+                @include breakpoint(mobile) {
+                    top: -34px;
+                    width: 65px;
+                    height: 65px;
                 }
             }
             & h3 {
@@ -265,11 +588,20 @@
                 text-transform: uppercase;
                 margin: 0 0 8px;
                 font-family: $main-font;
+                @include breakpoint(large) {
+                    font-size: 20px;
+                }
             }
             & p {
                 color: $white;
                 font-size: 20px;
                 font-family: $main-font-light;
+                @include breakpoint(large) {
+                    font-size: 17px;
+                }
+                @include breakpoint(mobile) {
+                    font-size: 14px;
+                }
             }
             & .rd_more_btn {
                 width: 200px;
@@ -283,6 +615,18 @@
                 margin: 20px auto 0;
                 border-radius: 10px;
                 text-transform: uppercase;
+                @include breakpoint(large) {
+                    height: 58px;
+                    line-height: 56px;
+                }
+                @include breakpoint(mobile) {
+                    height: 48px;
+                    line-height: 46px;
+                    font-size: 15px;
+                    width: 155px;
+                    margin: 15px auto 0;
+                    padding: 0 5px;
+                }
                 &:hover,
                 &:focus {
                     background: $primary-color;
@@ -298,7 +642,14 @@
     background-size: cover !important;
     text-align: center;
     position: relative;
+    clear: both;
     background-attachment: fixed !important;
+    @include breakpoint(normal) {
+        padding: 50px 0;
+    }
+    @include breakpoint(ipad) {
+        padding: 45px 0 50px;
+    }
     &:after {
         position: absolute;
         content: "";
@@ -319,9 +670,17 @@
         font-size: 20px;
         font-family: $main-font-book;
         margin: 15px 0 40px;
+        @include breakpoint(large) {
+            font-size: 18px;
+        }
     }
     & form {
-
+        & select {
+            &.form-control {
+                padding-right: 48px !important;
+                text-transform: capitalize;
+            }
+        }
         & .form-control {
             background: none;
             @include add-border(1px, $input_border, all);
@@ -331,12 +690,31 @@
             &.txtarea {
                 height: 135px !important;
                 padding: 15px;
+                @include breakpoint(mobile) {
+                    height: 80px !important;
+                }
             }
+
             @include placeholder {
                 color: $white;
             }
             border-radius: 0;
+            &.wpcf7-not-valid {
+                border-color: #ff0000;
+            }
+            @include breakpoint(normal) {
+                font-size: 14px;
+            }
+            @include breakpoint(mobile) {
+                font-size: 13px;
+                height: 40px !important;
+            }
+            &:focus {
+                box-shadow: none;
+                border-color: #ffff39;
+            }
         }
+
         & .sbmt_btn {
             width: 200px;
             height: 68px;
@@ -351,6 +729,19 @@
             text-transform: uppercase;
             background: none;
             cursor: pointer;
+            padding: 0;
+            transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+            @include breakpoint(large) {
+                height: 58px;
+                line-height: 56px;
+            }
+            @include breakpoint(mobile) {
+                height: 48px;
+                line-height: 46px;
+                font-size: 15px;
+                width: 155px;
+            }
             &:hover,
             &:focus {
                 background: $primary-color;
@@ -358,58 +749,862 @@
             }
         }
     }
+
 }
 
-footer {
-    background: $dark-grey;
-    padding: 62px 0 0;
-    & h2 {
-        font-size: 20px;
-        text-transform: uppercase;
-        color: $white;
-        margin: 0 0 24px;
-        font-family: $main-font;
-    }
-    & .block1 {
-        & ul {
 
-            & li {
-                font-family: $main-font-light;
-                font-size: 18px;
-                margin: 0 0 10px;
-                width: 50%;
-                float: left;
-                text-transform: capitalize;
-                padding-left: 25px;
-                position: relative;
-                &:before {
-                    position: absolute;
-                    content: "\f105";
-                    font-family: $FontAwesome;
-                    color: $primary-color;
-                    left: 0;
-                    top: -1px;
+
+/*******************************************************************************About Page CSS starts here*********************************************************************/
+
+.repair_process {
+    background: $dark-grey;
+    padding: 80px 0;
+    @include breakpoint(normal) {
+        padding: 40px 0 50px;
+    }
+    & h2 {
+        text-align: center;
+        counter-reset: section;
+    }
+    & .process_box {
+        @include add-border(1px, #343434, all);
+        min-height: 395px;
+        padding: 65px 25px 25px;
+        margin: 115px 0 0;
+        position: relative;
+        text-align: center;
+        @include breakpoint(large) {
+            min-height: 355px;
+        }
+        @include breakpoint(mobile) {
+            margin: 85px 0 0;
+            min-height: auto;
+        }
+        &:after {
+            counter-increment: section;
+            content: counter(section);
+            position: absolute;
+            color: #3e3e3e;
+            left: 30px;
+            font-size: 145px;
+            top: 0;
+            font-family: $main-font-bold;
+        }
+        & .process-icon {
+            position: absolute;
+            top: -70px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 140px;
+            height: 140px;
+            @include add-border(3px, #343434, all);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $dark-grey;
+            &:before {
+                background: $primary-color;
+                content: "";
+                height: 6px;
+                right: -50%;
+                position: absolute;
+                width: 6px;
+            }
+            &:after {
+                content: "";
+                width: 58px;
+                position: absolute;
+                right: -61px;
+                height: 2px;
+                background: $dark-grey;
+                top: 49%;
+                @include breakpoint(mobile) {
+                    width: 28px;
+                    right: -32px;
                 }
-                & a {
+            }
+            @include breakpoint(mobile) {
+                width: 90px;
+                height: 90px;
+                top: -45px;
+            }
+            & img {
+                @include breakpoint(mobile) {
+                    width: 18px;
+                }
+            }
+
+        }
+        & p {
+            margin: 40px 0 0;
+            font-size: 20px;
+            color: $white;
+            font-family: $main-font-light;
+            position: relative;
+            z-index: 1;
+            @include breakpoint(large) {
+                font-size: 16px;
+            }
+            @include breakpoint(mobile) {
+                margin: 15px 0 0;
+                font-size: 14px;
+            }
+        }
+
+    }
+}
+
+.aboutus_section {
+    background: $light-black;
+    text-align: center;
+    padding: 85px 0;
+    @include breakpoint(normal) {
+        padding: 40px 0;
+    }
+    & p {
+        margin: 40px 0 0;
+        font-size: 20px;
+        color: $white;
+        font-family: $main-font-light;
+        @include breakpoint(large) {
+            font-size: 16px;
+        }
+        @include breakpoint(normal) {
+            margin: 25px 0 0;
+        }
+        @include breakpoint(mobile) {
+            margin: 20px 0 0;
+            font-size: 14px;
+        }
+    }
+}
+
+/*****************************************************************************Blog page CSS starts here************************************************************************/
+
+.blog_section {
+    background: $light-black;
+    padding: 80px 0;
+    @include breakpoint(normal) {
+        padding: 40px 0;
+    }
+    & .blog-grids {
+        padding: 0 40px 0 0;
+        @include breakpoint(normal) {
+            padding: 0 10px 0 0;
+        }
+        & .postWrapper {
+            @include add-border(1px, #414142, bottom);
+            padding: 0 0 44px;
+            margin: 0 0 68px;
+            @include breakpoint(normal) {
+                padding: 0 0 30px;
+                margin: 0 0 30px;
+            }
+            & .postTitle {
+                @include add-border(1px, #3d3d3d, bottom);
+                padding-bottom: 14px;
+                & h2 {
+                    font-size: 30px;
+                    color: $primary-color;
+                    font-family: $main-font;
+                    & a {
+                        color: $primary-color;
+                        &:hover,
+                        &:focus {
+                            color: $white;
+                        }
+                    }
+                    @include breakpoint(mobile) {
+                        font-size: 20px;
+                    }
+                }
+            }
+            & .blog_dtls {
+                width: 100%;
+                display: block;
+                overflow: hidden;
+                padding: 15px 0;
+                & .post_by {
+                    float: left;
+                    color: #707070;
+                    font-size: 17px;
+                    text-transform: capitalize;
+                    font-family: $main-font-light;
+                    @include breakpoint(mobile) {
+                        font-size: 13px;
+                    }
+                    & .date1 {
+                        border-left: 1px solid #707070;
+                        padding: 0 0 0 10px;
+                        position: relative;
+                        margin: 0 0 0 5px;
+                    }
+                }
+                ul {
+                    overflow: hidden;
+                    float: right;
+                    & li {
+                        float: left;
+                        margin: 0 0 0 25px;
+                        color: #707070;
+                        font-size: 17px;
+                        text-transform: capitalize;
+                        border-left: 1px solid #e9e8e8;
+                        font-family: $main-font-light;
+                        padding: 0px 0 0 25px;
+                        &:first-child {
+                            margin: 0;
+                            padding: 0;
+                            border: 0;
+                        }
+                        & a {
+                            color: $white;
+                            & i {
+                                color: $primary-color;
+                            }
+                        }
+                    }
+                }
+            }
+            & .blog-content {
+                a {
+                    &:hover {
+                        & figure {
+                            opacity: 0.8;
+                        }
+                    }
+                }
+                & figure {
+                    height: 485px;
+                    width: 100%;
+                    @include bg-cover;
+                    transition: all 0.3s ease-in-out;
+                    -webkit-transition: all 0.3s ease-in-out;
+                    @include breakpoint(large) {
+                        height: 350px;
+                    }
+                    @include breakpoint(mobile) {
+                        height: 180px;
+                    }
+                }
+                & p {
+                    margin: 15px 0 0;
+                    font-size: 20px;
                     color: $white;
+                    font-family: $main-font-light;
+                    position: relative;
+                    z-index: 1;
+                    @include breakpoint(large) {
+                        font-size: 16px;
+                    }
+                }
+                & .blog-read-more {
+                    font-size: 20px;
+                    display: inline-block;
+                    text-transform: capitalize;
+                    margin-top: 10px;
+                    letter-spacing: 3px;
+                    color: $primary-color;
+                    font-family: $main-font-book;
+                    position: relative;
+                    &:after {
+                        content: "";
+                        width: 40px;
+                        height: 2px;
+                        display: inline-block;
+                        background: #717171;
+                        margin: 0 0 0 15px;
+                    }
                     &:hover,
                     &:focus {
-                        color: $primary-color;
+                        color: #fff;
+                    }
+                }
+            }
+            &:last-of-type {
+                border: 0;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+}
+
+.side-bar {
+    @include breakpoint(mobile) {
+        margin: 25px 0 0 0;
+    }
+    & .srch_bar {
+        position: relative;
+        & input {
+            width: 100%;
+            background: #4a4a4a;
+            height: 52px;
+            border: 0;
+            padding: 0 40px 0 15px;
+            color: #fff;
+        }
+        & button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            background: none;
+            font-size: 17px;
+            color: $primary-color;
+            right: 15px;
+            border: 0;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+        }
+    }
+    & .recent-posts {
+        background: #4a4a4a;
+        padding: 30px 30px 40px 22px;
+        margin: 35px 0;
+        overflow: hidden;
+        & h2 {
+            font-size: 24px;
+            font-family: $main-font-book;
+            color: $white;
+            @include breakpoint(normal) {
+                text-align: center;
+            }
+        }
+        & .recent-single-post {
+            margin: 30px 0 0;
+            overflow: hidden;
+            & .recent-singleimage {
+                width: 80px;
+                height: 75px;
+                float: left;
+                @include bg-cover;
+                @include breakpoint(large) {
+                    width: 70px;
+                    height: 65px;
+                }
+                @include breakpoint(normal) {
+                    float: none;
+                    display: block;
+                    margin: auto;
+                }
+            }
+
+        }
+        & .recent-singlecontent {
+            width: 65%;
+            float: right;
+            & .recent-singletitle {
+                font-size: 17px;
+                color: $white;
+                margin-top: -5px;
+                display: block;
+                &:hover,
+                &:focus {
+                    color: $primary-color;
+                }
+            }
+            & p {
+                margin: 5px 0 0;
+                font-size: 15px;
+                color: $white;
+                font-family: $main-font-light;
+            }
+            @include breakpoint(large) {
+                width: 56%;
+            }
+            @include breakpoint(normal) {
+                float: none;
+                display: block;
+                width: 100%;
+                margin: 15px 0 0;
+                text-align: center;
+            }
+        }
+        & ul {
+            margin: 15px 0 0;
+            & li {
+                display: block;
+                margin: 10px 0 0;
+                font-size: 17px;
+                font-family: $main-font-book;
+                @include breakpoint(normal) {
+                    text-align: center;
+                    font-size: 16px;
+                }
+                & a {
+                    color: $primary-color;
+                    text-transform: capitalize;
+                    &:hover,
+                    &:focus {
+                        color: $white;
                     }
                 }
             }
         }
     }
-    & .block2 {
-        width: 80%;
-        & ul {
+}
 
+/*****************************************************************************Service page CSS starts here************************************************************************/
+
+.body-shop-section {
+    background: $dark-grey;
+    padding: 80px 0;
+    text-align: center;
+    @include breakpoint(normal) {
+        padding: 50px 0;
+    }
+    @include breakpoint(ipad) {
+        padding: 40px 0;
+    }
+    @include breakpoint(mobile) {
+        padding: 20px 0;
+    }
+    & h2 {
+        color: $white;
+        font-size: 35px;
+        text-transform: uppercase;
+        font-family: $main-font;
+        margin: 0 0 40px;
+        @include breakpoint(ipad) {
+            font-size: 24px;
+        }
+        @include breakpoint(mobile) {
+            font-size: 18px;
+            margin: 0 0 25px;
+        }
+    }
+    & .body-box {
+        margin: 0 0 35px;
+        padding: 0 0 48px;
+        background: url(../images/box-shadow.png) no-repeat bottom center;
+        &:last-of-type {
+            background: none;
+            margin: 0;
+            padding: 0;
+        }
+        @include breakpoint(mobile) {
+            margin: 0 0 28px;
+            padding: 0 0 28px;
+        }
+        & h3 {
+            color: $white;
+            font-size: 24px;
+            text-transform: uppercase;
+            font-family: $main-font;
+            margin: 0 0 10px;
+            @include breakpoint(ipad) {
+                font-size: 20px;
+            }
+            @include breakpoint(mobile) {
+                font-size: 16px;
+            }
+        }
+        & p {
+            font-size: 20px;
+            color: $white;
+            font-family: $main-font-light;
+            @include breakpoint(large) {
+                font-size: 16px;
+            }
+            @include breakpoint(mobile) {
+                font-size: 14px;
+            }
+        }
+    }
+    &.pdr-wins {
+        & h2 {
+            margin: 0;
+            font-size: 50px;
+            @include breakpoint(normal) {
+                font-size: 42px;
+            }
+            @include breakpoint(ipad) {
+                font-size: 32px;
+            }
+            @include breakpoint(mobile) {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.service_grid_box {
+    background: #101010;
+    padding: 78px 0;
+    text-align: center;
+    @include breakpoint(ipad) {
+        padding: 45px 0 25px;
+    }
+    & h2 {
+        color: $white;
+        font-size: 35px;
+        text-transform: uppercase;
+        font-family: $main-font;
+        margin: 0 0 40px;
+        @include breakpoint(ipad) {
+            font-size: 24px;
+        }
+        @include breakpoint(mobile) {
+            font-size: 18px;
+        }
+    }
+    & .grid1 {
+        margin: 0 0 30px;
+        @include breakpoint(mobile) {
+            margin: 0;
+        }
+        & .box1 {
+            background: #2f2f2f;
+            height: 442px;
+            padding: 40px;
+            overflow-y: auto;
+            @include breakpoint(ipad) {
+                height: 385px;
+            }
+            @include breakpoint(mobile) {
+                height: auto;
+                padding: 15px;
+                margin: 0 0 20px;
+            }
+        }
+        & .box2 {
+            background: #2f2f2f;
+            height: 318px;
+            padding: 40px;
+            overflow-y: auto;
+            @include breakpoint(mobile) {
+                height: auto;
+                padding: 15px;
+                margin: 0 0 20px;
+            }
+        }
+        & h3 {
+            color: $white;
+            font-size: 24px;
+            text-transform: uppercase;
+            font-family: $main-font;
+            margin: 0 0 10px;
+            @include breakpoint(ipad) {
+                font-size: 20px;
+            }
+            @include breakpoint(mobile) {
+                font-size: 16px;
+            }
+        }
+        & p {
+            font-size: 20px;
+            color: $white;
+            font-family: $main-font-light;
+            margin: 0 0 20px;
+            @include breakpoint(large) {
+                font-size: 16px;
+            }
+            @include breakpoint(mobile) {
+                font-size: 14px;
+            }
+        }
+
+    }
+}
+
+/*****************************************************************************Gallery page CSS starts here************************************************************************/
+
+.gallery_sec {
+    width: 100%;
+    padding: 80px 0;
+    background: $dark-grey;
+    text-align: center;
+    @include breakpoint(normal) {
+        padding: 50px 0;
+    }
+    @include breakpoint(mobile) {
+        padding: 30px 0;
+    }
+    & ul {
+        & li {
+            color: $primary-color;
+            display: inline-block;
+            font-size: 20px;
+            list-style: none;
+            text-align: center;
+            font-family: $main-font;
+            margin: 0 0 0 -4px;
+            @include add-border(1px, $primary-color, all);
+            text-transform: uppercase;
+            border-radius: 5px 0px 0px 5px;
+            @include breakpoint(mobile) {
+                width: 100%;
+                margin: 0 0 10px;
+                display: block;
+                border-radius: 5px;
+            }
+            &:last-child {
+                margin-right: 0;
+                border-left: 0;
+                border-radius: 0px 5px 5px 0px;
+                @include breakpoint(mobile) {
+                    border-left: 1px solid #ffff39;
+                    border-radius: 5px;
+                }
+            }
+            & span {
+                background: transparent;
+                width: 260px;
+                display: inline-block;
+                cursor: pointer;
+                padding: 11px 10px;
+                @include breakpoint(mobile) {
+                    width: 100%;
+                    display: block;
+                }
+            }
+        }
+    }
+    & #portfoliolist {
+        margin-top: 59px;
+        overflow: hidden;
+        @include breakpoint(mobile) {
+            margin-top: 20px;
+        }
+
+        & .portfolio {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            width: 23%;
+            margin: 0 1% 1%;
+            display: none;
+            float: left;
+            & figure {
+                @include breakpoint(mobile) {
+                    margin: 0;
+                }
+            }
+            & img {
+                width: 100%;
+            }
+            &:hover,
+            &:focus {
+
+                & .gallery_hover {
+                    opacity: 1;
+                }
+            }
+            @include breakpoint(mobile) {
+                width: 48%;
+                margin-bottom: 2%;
+            }
+        }
+
+        & .portfolio-wrapper {
+            position: relative;
+        }
+    }
+
+    & .gallery_hover {
+        background: rgba(255, 255, 57, 0.78);
+        height: 100%;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        top: 0;
+        opacity: 0;
+        transition: all 0.5s ease-in-out 0s;
+        -webkit-transition: all 0.5s ease-in-out 0s;
+        & a {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: block;
+            &:before {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                content: '\f067';
+                background: transparent;
+                font-family: $FontAwesome;
+                height: 60px;
+                width: 60px;
+                right: 0;
+                margin: auto;
+                border-radius: 50%;
+                @include add-border(2px, $black, all);
+                line-height: 60px;
+                color: $black;
+                font-weight: 300;
+                font-size: 22px;
+                transform: translateY(-50%);
+                -webkit-transform: translateY(-50%);
+            }
+        }
+    }
+
+}
+
+#filters {
+    margin: 0 1%;
+    & li {
+        float: none;
+        list-style: none;
+        &:last-child {
+            margin-right: 0;
+        }
+        & span.active,
+        &:hover span {
+            background: $primary-color;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -ms-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+            color: $black;
+        }
+    }
+}
+
+/************************************************************FAQ page CSS starts here*************************************************/
+
+.faq {
+    padding: 80px 0 60px;
+    background: $dark-grey;
+    @include breakpoint(normal) {
+        padding: 50px 0 30px;
+    }
+    & #accordion {
+        & .card {
+            background: none;
+            border: 0;
+            margin: 0 0 20px;
+        }
+        & .card-header {
+            padding: 0;
+        }
+        & .btn-link {
+            width: 100%;
+            display: block;
+            text-align: left;
+            background: #414141;
+            font-size: 22px;
+            color: $white;
+            font-family: $main-font-book;
+            border-radius: 0;
+            position: relative;
+            padding: 7px 15px 7px 80px;
+            cursor: pointer;
+            text-decoration: none;
+            white-space: normal;
+            transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+            &:hover {
+                background: #ffff39;
+                color: #000;
+            }
+            @include breakpoint(large) {
+                font-size: 20px;
+            }
+            @include breakpoint(mobile) {
+                font-size: 14px;
+                padding: 3px 10px 3px 65px;
+                height: 52px;
+            }
+            &.collapsed {
+                &:before {
+                    content: url("../images/plus_icon.png");
+                    background: $primary-color;
+                    height: 100%;
+                    width: 55px;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    text-align: center;
+                    line-height: 2.4;
+                    @include breakpoint(mobile) {
+                        line-height: 62px;
+                        height: 51px;
+                        width: 55px;
+                    }
+                }
+            }
+            &:before {
+                content: url("../images/minus_icon.png");
+                background: $primary-color;
+                height: 100%;
+                width: 55px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                text-align: center;
+                line-height: 2.4;
+                @include breakpoint(mobile) {
+                    line-height: 62px;
+                    height: 51px;
+                    width: 55px;
+                }
+            }
+        }
+        & .card-body {
+            font-size: 20px;
+            color: $white;
+            font-family: $main-font-light;
+            padding: 20px 0;
+            @include breakpoint(large) {
+                font-size: 16px;
+            }
+            @include breakpoint(mobile) {
+                font-size: 13px;
+                padding: 5px 0;
+            }
+        }
+    }
+}
+
+/***********************************************************************Contact page CSS starts here****************************************************/
+
+.get-in-touch {
+    padding: 80px 0;
+    background: $dark-grey;
+    @include breakpoint(large) {
+        padding: 50px 0;
+    }
+    & h2 {
+        font-size: 24px;
+        text-transform: uppercase;
+        color: $white;
+        font-family: $main-font;
+        @include breakpoint(mobile) {
+            font-size: 20px;
+        }
+    }
+    & .cntct-info {
+        padding: 0 45px 0 0;
+        & h2 {
+            margin: 0 0 37px;
+            @include breakpoint(large) {
+                margin: 0 0 20px;
+            }
+        }
+        & ul {
             & li {
                 width: 100%;
                 float: right;
                 margin: 0 0 20px;
                 font-size: 18px;
                 font-family: $main-font-light;
+                @include add-border(1px,
+                #414141,
+                bottom);
+                margin: 0 0 20px;
+                padding: 0 0 20px;
+                @include breakpoint(large) {
+                    font-size: 16px;
+                }
+                @include breakpoint(mobile) {
+                    font-size: 14px;
+                }
                 & a {
                     color: $white;
                     &:hover,
@@ -425,56 +1620,263 @@ footer {
                     font-size: 20px;
                     position: relative;
                     top: -4px;
+                    & .fa-mobile,
+                    & .fa-map-marker {
+                        font-size: 30px;
+                        margin: 7px 0 0;
+                    }
+                    @include breakpoint(ipad) {
+                        width: 15%;
+                    }
                 }
                 & p {
                     color: $white;
                     float: left;
                     width: 95%;
                     padding-left: 15px;
-                }
-            }
-        }
-
-    }
-    & .block3 {
-        text-align: center;
-        & .follow_div {
-            margin: 30px 0 0;
-            & p {
-                font-size: 18px;
-                text-transform: uppercase;
-                color: $white;
-                font-family: $main-font;
-                margin: 0 0 20px;
-                letter-spacing: 0.5px;
-            }
-            & ul {
-                & li {
-                    display: inline-block;
-                    margin: 0 15px;
-                    font-size: 24px;
-                    & a {
-                        color: #606060;
-                        cursor: pointer;
-                        &:hover,
-                        &:focus {
-                            color: $white;
-                        }
+                    white-space: normal;
+                    word-wrap: break-word;
+                    @include breakpoint(ipad) {
+                        width: 85%;
                     }
                 }
             }
         }
-    }
 
-    & .copyright {
-        padding: 15px 0;
-        background: #121212;
+    }
+    & .contact-form {
+        background: #414141;
         text-align: center;
-        margin: 30px 0 0;
-        & p {
-            color: $white;
-            font-family: $main-font-light;
-            font-size: 17px;
+        padding: 40px 75px;
+        overflow: hidden;
+        @include breakpoint(ipad) {
+            padding: 30px;
         }
+        & h2 {
+            margin: 0 0 20px;
+        }
+        & .form-group {
+            &.rgt {
+                float: right;
+                width: 49%;
+                @include breakpoint(mobile) {
+                    width: 100%;
+                }
+            }
+            &.lft {
+                float: left;
+                width: 49%;
+                @include breakpoint(mobile) {
+                    width: 100%;
+                }
+            }
+            & .form-control {
+                background: none;
+                color: #fff;
+                border-radius: 0;
+                @include add-border(1px,
+                #787878,
+                all);
+                padding: 0 30px;
+                height: 56px;
+                @include breakpoint(large) {
+                    height: 48px;
+                }
+                &:focus {
+                    box-shadow: none;
+                    border-color: #ffff39;
+                }
+                &::-moz-placeholder {
+                    color: #dbdbdb;
+                    opacity: 1
+                }
+                &:-ms-input-placeholder {
+                    color: #dbdbdb
+                }
+                &::-webkit-input-placeholder {
+                    color: #dbdbdb
+                }
+                &.wpcf7-not-valid {
+                    border-color: #ff0000;
+                }
+                @include breakpoint(mobile) {
+                    height: 40px;
+                    font-size: 13px;
+                    padding: 0 15px;
+                }
+            }
+            & textarea {
+                height: 105px !important;
+                padding: 15px 30px !important;
+                @include breakpoint(mobile) {
+                    height: 80px;
+                    padding: 15px !important;
+                }
+            }
+        }
+        & .sbmt_btn {
+            width: 200px;
+            height: 68px;
+            line-height: 68px;
+            @include add-border(1px,
+            $primary-color,
+            all);
+            font-size: 20px;
+            display: block;
+            font-family: $main-font;
+            color: $primary-color;
+            margin: 20px auto 0;
+            border-radius: 10px;
+            text-transform: uppercase;
+            background: none;
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+            @include breakpoint(large) {
+                height: 58px;
+                line-height: 56px;
+            }
+            @include breakpoint(mobile) {
+                height: 48px;
+                line-height: 46px;
+                font-size: 15px;
+                width: 155px;
+            }
+            &:hover,
+            &:focus {
+                background: $primary-color;
+                color: #000;
+            }
+        }
+        & .cstm-btn .ajax-loader {
+            @include breakpoint(mobile) {
+                top: 17px !important;
+            }
+        }
+    }
+}
+
+.contact-map {
+    height: 585px;
+    overflow: hidden;
+    @include breakpoint(normal) {
+        height: 445px;
+    }
+    @include breakpoint(mobile) {
+        height: 315px;
+    }
+    .map_div {
+        position: absolute;
+        width: 100%;
+        height: 585px;
+        @include breakpoint(normal) {
+            height: 445px;
+        }
+        @include breakpoint(mobile) {
+            height: 315px;
+        }
+        & iframe {
+            width: 100%;
+            height: 585px;
+            @include breakpoint(normal) {
+                height: 445px;
+            }
+        }
+        &:after {
+            content: "";
+            background: rgba(0, 0, 0, 0.8);
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            position: absolute;
+            right: 0;
+        }
+    }
+    .container {
+        position: relative;
+        height: 100%;
+    }
+    .map-info {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        & ul {
+            width: 340px;
+            border: 0;
+            @include breakpoint(mobile) {
+                border: 0;
+                margin: 0 0 0 15px;
+                width: 35%;
+            }
+            & li {
+                background: #272727;
+                float: left;
+                width: 100%;
+                margin: 0 0 10px;
+
+                & a {
+                    color: $white;
+                    width: 100%;
+                    display: block;
+                    padding: 30px 15px;
+                    position: relative;
+                    z-index: 5;
+                    transition: all 0.1s ease-in-out;
+                    -webkit-transition: all 0.1s ease-in-out;
+                    @include breakpoint(mobile) {
+                        font-size: 12px;
+                        padding: 10px 5px;
+                    }
+                    &.active {
+                        background: $primary-color;
+                        color: $black;
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            right: -8px;
+                            background: $primary-color;
+                            width: 15px;
+                            height: 15px;
+                            top: 50%;
+                            transform: translateY(-50%)rotate(45deg);
+                            -webkit-transform: translateY(-50%)rotate(45deg);
+                            z-index: 0;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+#mg-wprm-wrap ul#wprmenu_menu_ul li.current-menu-item > a {
+    color: #fff !important
+}
+
+@include breakpoint(normal) {
+    .lity-container {
+        width: 85% !important;
+        max-width: 90% !important;
+    }
+    #mg-wprm-wrap,
+    #wprmenu_bar {
+        z-index: 999999 !important;
+    }
+    .wow {
+        animation: none !important;
+        -ms-animation: none !important;
+        -moz-animation: none !important;
+        -o-animation: none !important;
+        -webkit-animation: none !important;
+        visibility: visible !important;
     }
 }

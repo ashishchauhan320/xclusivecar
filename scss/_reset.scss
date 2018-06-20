@@ -64,7 +64,6 @@ em {
 .clr {
     border: 0;
     clear: both;
-    height: 0;
 }
 
 .display-table {
@@ -129,8 +128,50 @@ body {
     overflow-x: hidden;
     font-family: 'Ubuntu', sans-serif;
     padding: 0 !important;
-} 
+}
 
+.acf-map {
+    height: 585px !important;
+    border: 0 none !important;
+    margin: 0 !important;
+    @include breakpoint(normal) {
+        height: 445px !important;
+    }
+    @include breakpoint(mobile) {
+        height: 315px !important;
+    }
+}
+
+span.wpcf7-not-valid-tip {
+    display: none;
+}
+
+div.wpcf7-validation-errors,
+div.wpcf7-acceptance-missing {
+    border: 2px solid #ff0000;
+    background: rgba(255, 0, 0, 0.5);
+    color: #fff;
+    margin: 10px 0 0;
+    @include breakpoint(normal) {
+        font-size: 14px;
+    }
+    @include breakpoint(mobile) {
+        font-size: 12px;
+    }
+}
+
+div.wpcf7-mail-sent-ok {
+    border: 2px solid #398f14;
+    background: rgba(57, 143, 20, 0.6);
+    color: #fff;
+    margin: 10px 0 0;
+    @include breakpoint(normal) {
+        font-size: 14px;
+    }
+    @include breakpoint(mobile) {
+        font-size: 12px;
+    }
+}
 
 @include breakpoint(x-large) {
     .container {
